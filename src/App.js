@@ -15,14 +15,46 @@ import Videos from './component/Videos.js';
 import Banner from './component/Banner.js';
 import Footer from './component/Footer.js';
 import NavOptions from './component/NavOptions.js';
+import NavOptions1 from './component/NavOptions1';
 
 function App() {
   return (
     <Router>
         <PreNavbar/>
         <Navbar/>
-        <NavOptions miPhones={data.miPhones} redmiPhones={data.redmiPhones} tv={data.tv} laptop={data.laptop} fitnessAndLifeStyle={data.fitnessAndLifeStyle} home={data.home} audio={data.audio} accessories={data.accessories}/>
-        <Slider start={data.banner.start}/>
+        <Route exact path="/miphones">
+           <NavOptions1 miPhones={data.miPhones}/>
+        </Route>
+
+        <Route exact path="/redmiphones">
+           <NavOptions1 redmiPhones={data.redmiPhones}/>
+        </Route>
+
+        <Route exact path="/tv">
+           <NavOptions1 tv={data.tv} />
+        </Route>
+
+        <Route exact path="/laptop">
+           <NavOptions1 laptop={data.laptop}/>
+        </Route>
+
+        <Route exact path="/fitnessandlifestyle">
+           <NavOptions1 fitnessAndLifeStyle={data.fitnessAndLifeStyle}/>
+        </Route>
+
+        <Route exact path="/home1">
+           <NavOptions1 home={data.home}/>
+        </Route>
+
+        <Route exact path="/audio">
+           <NavOptions1  audio={data.audio} />
+        </Route>
+
+        <Route exact path="/accessories">
+           <NavOptions1 accessories={data.accessories}/>
+        </Route>
+         
+         <Slider start={data.banner.start}/>
         <Offers offer={data.offer}/>
         <Heading text="STAR PRODUCTS"/>
         <StarProduct starProduct={data.starProduct}/>
